@@ -1,0 +1,65 @@
+# Enable kwm compatibility mode
+khd kwm on
+
+# set color of default mode
+khd mode default color 0xFF8EC13E
+
+# Enable the prefix mode
+khd mode prefix prefix on
+khd mode prefix timeout 1
+khd mode prefix restore default
+khd mode prefix color 0xFFFC703F
+
+# Quit Kwm
+cmd + alt + ctrl - q : kwmc quit
+
+# Set Space Tiling Mode To BSP
+cmd + alt + ctrl - b : kwmc space -t bsp
+
+# Set Space Tiling Mode To Monocle
+cmd + alt + ctrl - m : kwmc space -t monocle
+
+# Set Space Tiling Mode To Floating
+cmd + alt + ctrl - f : kwmc space -t float
+
+# Rotate Window-Tree By 90degrees (Clockwise)
+cmd + alt + ctrl - r : kwmc tree rotate 90
+
+# Toggle window fullscreen
+cmd + alt + ctrl + shift - f : kwmc window -z fullscreen
+
+# Mark focused window
+cmd + alt + ctrl - x : kwmc window -mk focused
+
+# Detach Marked Window And Reinsert At Focused Window
+cmd + alt + ctrl - v : kwmc window -m mark
+
+# Resize windows
+ctrl + shift - 0x32 : khd -e "mode activate prefix"
+
+prefix - left : kwmc window -c expand 0.05 west
+prefix + shift - left : kwmc window -c reduce 0.05 west
+prefix - down : kwmc window -c expand 0.05 south
+prefix + shift - down : kwmc window -c reduce 0.05 south
+prefix - up : kwmc window -c expand 0.05 north
+prefix + shift - up : kwmc window -c reduce 0.05 north
+prefix - right : kwmc window -c expand 0.05 east
+prefix + shift - right : kwmc window -c reduce 0.05 east
+
+# Move window in same screen
+prefix + ctrl - left : kwmc window -s west
+prefix + ctrl - down : kwmc window -s south
+prefix + ctrl - up : kwmc window -s north
+prefix + ctrl - right : kwmc window -s east
+
+# Move Focused Window To Space
+cmd + alt + ctrl - left : kwmc window -m space left
+cmd + alt + ctrl - left : kwmc window -m space right
+
+# Move Focused Window To Screen
+cmd + alt + ctrl - p : kwmc window -m display 0
+cmd + alt + ctrl - n : kwmc window -m display 1
+
+# Modify Container
+# cmd + alt + ctrl - s : kwmc window -c split-mode toggle
+# cmd + alt + ctrl - 0x32 : kwmc window -c type toggle
