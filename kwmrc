@@ -43,7 +43,7 @@ kwmc config padding 35 10 10 10
 kwmc config gap 10 10
 
 # Default tiling mode for Kwm (bsp | monocle | float)
-kwmc config tiling float
+kwmc config tiling bsp
 
 # Automatically float windows that fail to resize
 kwmc config float-non-resizable on
@@ -119,13 +119,11 @@ blacklists an application from Kwms tiling
     kwmc rule owner="Steam" properties={float="true"}
     kwmc rule owner="Photoshop" properties={float="true"}
 */
-kwmc rule owner="Finder" properties={role="AXDialog"}
-kwmc rule owner="Finder" role="AXDialog" properties={float="true"}
-kwmc rule owner="Photoshop" properties={float="true"}
 kwmc rule owner="Franz" properties={float="true"}
-kwmc rule owner="BetterTouchTool" properties={float="true"}
 kwmc rule owner="BetterZip" properties={float="true"}
-kwmc rule owner="Font Book" properties={float="true"}
+kwmc rule owner="BetterTouchTool" properties={float="true"}
+kwmc rule owner="System Preferences" properties={float="true"}
+kwmc rule owner="Archive Utility" properties={float="true"}
 
 /*
 The following command creates a rule that
