@@ -37,6 +37,10 @@ cmd + ctrl - x : kwmc window -mk focused
 # Detach Marked Window And Reinsert At Focused Window
 cmd + ctrl - v : kwmc window -m mark
 
+# Modify Container
+ctrl + shift - t : kwmc window -c split-mode toggle
+# ctrl + shift - 0x32 : kwmc window -c type toggle
+
 # Resize windows - 0x32 = `
 ctrl + shift - 0x32 : khd -e "mode activate prefix"
 
@@ -62,21 +66,21 @@ cmd - 3 : kwmc space -fExperimental 3
 cmd - 4 : kwmc space -fExperimental 4
 cmd - 5 : kwmc space -fExperimental 5
 cmd - 6 : kwmc space -fExperimental 6
+cmd + alt - left : kwmc space -fExperimental left
+cmd + alt - right : kwmc space -fExperimental right
+
+#killall Dock
 
 # Move focused window to space
-cmd + shift - 1 : kwmc window -m space 1
-cmd + shift - 2 : kwmc window -m space 2
-cmd + shift - 3 : kwmc window -m space 3
-cmd + shift - 4 : kwmc window -m space 4
-cmd + shift - 5 : kwmc window -m space 5
-cmd + shift - 6 : kwmc window -m space 6
-cmd + shift - left : kwmc window -m space left
-cmd + shift - right : kwmc window -m space right
+# cmd + shift - 1 : kwmc window -m space 1
+# cmd + shift - 2 : kwmc window -m space 2
+# cmd + shift - 3 : kwmc window -m space 3
+# cmd + shift - 4 : kwmc window -m space 4
+# cmd + shift - 5 : kwmc window -m space 5
+# cmd + shift - 6 : kwmc window -m space 6
+cmd + alt + ctrl - left : kwmc window -m space left
+cmd + alt + ctrl - right : kwmc window -m space right
 
 # Move focused window to screen
 cmd + alt + ctrl - 1 : kwmc window -m display 0
 cmd + alt + ctrl - 2 : kwmc window -m display 1
-
-# Modify Container
-ctrl + shift - t : kwmc window -c split-mode toggle
-# ctrl + shift - 0x32 : kwmc window -c type toggle
