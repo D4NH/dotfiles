@@ -1,4 +1,4 @@
-# D4NH's dofiles
+# D4NH's dotfiles
 
 * OS: `macOS Sierra 10.12.1`
 * Window Manager: `kwm`
