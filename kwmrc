@@ -37,7 +37,7 @@ e.g: window-rules in a separate file called 'rules'
 */
 
 # Set default values for screen padding
-kwmc config padding 35 10 10 10
+kwmc config padding 10 35 10 10
 
 # Set default values for container gaps
 kwmc config gap 10 10
@@ -91,6 +91,23 @@ Override default settings for space 1 on screen 0
    kwmc config space 0 1 gap 40 40
 */
 
+kwmc config space 1 1 name external
+
+kwmc config space 0 1 name finder
+
+kwmc config space 0 2 name browser
+
+kwmc config space 0 3 name editor
+
+kwmc config space 0 4 name terminal
+
+kwmc config space 0 5 mode monocle
+kwmc config space 0 5 name other
+
+kwmc config space 0 6 mode monocle
+kwmc config space 0 6 padding 200 200 300 300
+kwmc config space 0 6 name chat
+
 /*
 Override default settings for screen 1
    kwmc config display 1 mode bsp
@@ -119,11 +136,10 @@ blacklists an application from Kwms tiling
     kwmc rule owner="Steam" properties={float="true"}
     kwmc rule owner="Photoshop" properties={float="true"}
 */
-kwmc rule owner="Franz" properties={float="true"}
-kwmc rule owner="BetterZip" properties={float="true"}
-kwmc rule owner="BetterTouchTool" properties={float="true"}
-kwmc rule owner="System Preferences" properties={float="true"}
-kwmc rule owner="Archive Utility" properties={float="true"}
+kwmc rule owner="Franz" properties={display="0"; space="6";}
+kwmc rule owner="BetterZip" properties={display="0"; space="1";}
+kwmc rule owner="BetterTouchTool" properties={display="0"; space="1"; float="true"}
+kwmc rule owner="System Preferences" properties={display="0"; space="1"; float="true"}
 
 /*
 The following command creates a rule that
