@@ -13,10 +13,10 @@
 
 #Screenshots
 
-![Screenshots](http://i.imgur.com/98SpmVK.jpg "Clean")
+![Screenshots](http://i.imgur.com/rW3NYGM.jpg "Clean")
 
-![Screenshots](http://i.imgur.com/wQIKgHy.png "Browser")
+![Screenshots](http://i.imgur.com/0z0iRIQ.png "Browser")
 
-![Screenshots](http://i.imgur.com/s8OuZws.png "Editor")
+![Screenshots](http://i.imgur.com/n8tp1J7.png "Editor")
 
-![Screenshots](http://i.imgur.com/V0t3ePM.png "Terminal")
+![Screenshots](http://i.imgur.com/e0nJHpF.png "Terminal")

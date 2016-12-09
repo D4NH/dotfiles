@@ -11,6 +11,9 @@ ZSH_THEME="bira"
 #BASE16_SHELL="$HOME/.config/base16-shell/base16-material.dark.sh"
 #[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -91,7 +94,7 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias edit="open -a Sublime\ Text"
 alias npmc="rm -rf node_modules && npm cache clean && npm install"
-alias info="neofetch --image off"
+alias info="neofetch"
 alias ez="vim ~/.zshrc"
 alias vh="vim ~/.hotkeys"
 alias ld="gls -lh --color --group-directories-first"
@@ -113,5 +116,5 @@ alias npm-exec="PATH=$(npm bin):$PATH"
 alias docker-timesync="docker run -it --rm --privileged --pid=host debian nsenter -t 1 -m -u -n -i date -u $(date -u +%m%d%H%M%Y)"
 
 # custom boot scripts
-neofetch --image off
+neofetch
 terminal-notifier -title 'iTerm2' -message 'Welcome Danh Nguyen'

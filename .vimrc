@@ -15,10 +15,13 @@ set ruler                           " Show row and column ruler information
 set showtabline=2                   " Show tab bar
 set laststatus=2                    " Always show airline bar
 set cmdheight=1                     " Command line height
-set mouse=a                         " Simple mouse support
+" set mouse=a                         " Simple mouse support
+"let base16colorspace=256
+"colorscheme base16-default-dark
 colorscheme onedark
 let g:onedark_termcolors=256
 let g:airline_theme='onedark'
+let g:airline_powerline_fonts = 1
 
 " Search
 " set hlsearch                        " Highlight all search results
