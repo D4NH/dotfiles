@@ -4,10 +4,9 @@
 * Window Manager: `kwm`
 * Terminal: `iTerm`
 * Terminal Font: `Source Code Pro for Powerline`
-* Terminal color scheme: `base16`
-* Text Editor: `vim`
+* Terminal color scheme: `base16-shell`
+* Text Editor: `Sublime Text 3 + VIM`
 * Editor Font: `Source Code Pro for Powerline`
-* Music Player: `Spotify`
 * File Browser: `Ranger`
 * Web Browser: `Google Chrome`
 
