@@ -142,6 +142,8 @@ blacklists an application from Kwms tiling
 kwmc rule owner="Franz" properties={display="0"; space="6";}
 kwmc rule owner="Google Agenda" properties={display="0"; space="2";}
 kwmc rule owner="Google Photos" properties={display="0"; space="2";}
+kwmc rule owner="Google Chrome" properties={display="0"; space="2";}
+kwmc rule owner="firefox" properties={display="0"; space="2";}
 kwmc rule owner="Spotify" properties={display="0"; space="2";}
 kwmc rule owner="Photoshop" properties={display="0"; space="5";}
 kwmc rule owner="SourceTree" properties={display="0"; space="5";}

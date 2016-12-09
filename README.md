@@ -18,4 +18,4 @@
 
 ![Screenshots](http://i.imgur.com/n8tp1J7.png "Editor")
 
-![Screenshots](http://i.imgur.com/e0nJHpF.png "Terminal")
+![Screenshots](http://i.imgur.com/wipWuXE.png "Terminal")
