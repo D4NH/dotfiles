@@ -59,15 +59,19 @@ prefix + ctrl - down : kwmc window -s south
 prefix + ctrl - up : kwmc window -s north
 prefix + ctrl - right : kwmc window -s east
 
+# Float current focused window
+prefix - f : kwmc window -t focused
+
 # Change focus between spaces, skipping transitions animation
-cmd - 1 : kwmc space -fExperimental 1
-cmd - 2 : kwmc space -fExperimental 2
-cmd - 3 : kwmc space -fExperimental 3
-cmd - 4 : kwmc space -fExperimental 4
-cmd - 5 : kwmc space -fExperimental 5
-cmd - 6 : kwmc space -fExperimental 6
-cmd + alt - left : kwmc space -fExperimental left
-cmd + alt - right : kwmc space -fExperimental right
+# cmd - 1 : kwmc space -fExperimental 1
+# cmd - 2 : kwmc space -fExperimental 2
+# cmd - 3 : kwmc space -fExperimental 3
+# cmd - 4 : kwmc space -fExperimental 4
+# cmd - 5 : kwmc space -fExperimental 5
+# cmd - 6 : kwmc space -fExperimental 6
+# cmd + alt - left : kwmc space -fExperimental left
+# cmd + alt - right : kwmc space -fExperimental right
+# cmd - 0x30 : kwmc space -fExperimental previous
 
 #killall Dock
 
@@ -82,5 +86,8 @@ cmd + alt + ctrl - left : kwmc window -m space left
 cmd + alt + ctrl - right : kwmc window -m space right
 
 # Move focused window to screen
-cmd + alt + ctrl - 1 : kwmc window -m display 0
-cmd + alt + ctrl - 2 : kwmc window -m display 1
+cmd + alt + ctrl - 0 : kwmc window -m display 0
+cmd + alt + ctrl - 1 : kwmc window -m display 1
+
+# Custom keybinds
+#ctrl + shift - 0x92 : pmset sleepnow
