@@ -173,4 +173,3 @@ kwmc config border marked on
 kwmc config border marked size 2
 kwmc config border marked color 0xFFFC703F
 kwmc config border marked radius 6
-
