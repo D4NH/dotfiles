@@ -93,8 +93,10 @@ Override default settings for space 1 on screen 0
 
 kwmc config space 0 1 padding 150 150 150 150
 kwmc config space 0 1 name home
+kwmc config space 0 1 mode monocle
 
 kwmc config space 0 2 name browser
+kwmc config space 0 2 mode monocle
 
 kwmc config space 0 3 name editor
 
@@ -108,6 +110,7 @@ kwmc config space 0 6 mode monocle
 kwmc config space 0 6 name chat
 
 kwmc config space 1 1 name external
+kwmc config space 1 1 mode monocle
 
 /*
 Override default settings for screen 1
@@ -173,3 +176,4 @@ kwmc config border marked on
 kwmc config border marked size 2
 kwmc config border marked color 0xFFFC703F
 kwmc config border marked radius 6
+
