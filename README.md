@@ -20,3 +20,11 @@
 
 ![Screenshots](http://i.imgur.com/wipWuXE.png "Terminal")
 
+## Links
+
+[kwm](https://github.com/koekeishiya/kwm/)
+[iTerm](https://www.iterm2.com/)
+[fonts](https://github.com/powerline/fonts)
+[base16-cs](https://github.com/chriskempson/base16)
+[ubersicht](http://tracesof.net/uebersicht/)
+
