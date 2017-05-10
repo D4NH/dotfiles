@@ -6,13 +6,12 @@ render: (output) ->
   """
   <div class="battery"
     <span></span>
-    <span class="icon fa fa-baterry-empty"></span>
+    <span class="icon fa fa-battery-empty"></span>
     <span class="text">#{output}</span>
   </div>
   """
 
 update: (output, el) ->
-
     elIcon = $(".battery span.icon", el)
     elIcon.removeClass().addClass("icon fa #{@icon(parseInt(output))}")
 
@@ -31,11 +30,12 @@ icon: (output) =>
 style: """
   -webkit-font-smoothing: antialiased
   font: 9px Input
-  top: 4px
-  right: 195px
+  top: 5px
+  right: 245px
   color: white
   .text
     margin-left: 5px
     font-family: 'Source Code Pro for Powerline'
     font-size: 11px
+    font-weight: bold
 """

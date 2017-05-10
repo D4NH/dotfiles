@@ -15,10 +15,11 @@ style: """
   -webkit-font-smoothing: antialiased
   color: white
   font: 11px Input
-  right: 80px
-  top: 4px
-  text-transform: lowercase
+  right: 75px
+  top: 5px
+  //text-transform: lowercase
   .text
     margin-left: 5px
     font-family: 'Source Code Pro for Powerline'
+    font-weight: bold
 """

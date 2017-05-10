@@ -12,12 +12,15 @@ render: (output) ->
   """
 
 style: """
+  background-color: #89C541
+  padding: 5px 5px 4px 5px
   -webkit-font-smoothing: antialiased
-  color: white
+  color: black
   font: 11px Input
-  right: 10px
-  top: 4px
+  right: 0
+  top: 0
   .text
     margin-left: 5px
     font-family: 'Source Code Pro for Powerline'
+    font-weight: 600
 """

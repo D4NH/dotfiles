@@ -1,4 +1,4 @@
-command: 'echo "$(/usr/local/bin/kwmc query space active name)"'
+command: 'echo "$(/usr/local/bin/kwmc query space active mode) $(/usr/local/bin/kwmc query space active name) | $(/usr/local/bin/kwmc query window focused name)"'
 
 refreshFrequency: 1000 # ms
 
@@ -23,11 +23,13 @@ style: """
   font: 11px Input
   height: 16px
   left: 10px
+  top: 5px
+
+  width: 500px
   overflow: hidden
   text-overflow: ellipsis
-  top: 4px
-  width: auto
   white-space: nowrap
+
   .text
     margin-left: 5px
     font-family: 'Source Code Pro for Powerline'
