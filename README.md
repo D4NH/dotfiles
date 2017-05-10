@@ -1,6 +1,6 @@
 # D4NH's dotfiles
 
-* OS: `macOS Sierra 10.12.1`
+* OS: `macOS Sierra 10.12.4`
 * Window Manager: `kwm`
 * Terminal: `iTerm`
 * Terminal Font: `Source Code Pro for Powerline`
@@ -10,7 +10,7 @@
 * File Browser: `Ranger`
 * Web Browser: `Google Chrome`
 
-#Screenshots
+## Screenshots
 
 ![Screenshots](http://i.imgur.com/rW3NYGM.jpg "Clean")
 
@@ -19,3 +19,4 @@
 ![Screenshots](http://i.imgur.com/n8tp1J7.png "Editor")
 
 ![Screenshots](http://i.imgur.com/wipWuXE.png "Terminal")
+
