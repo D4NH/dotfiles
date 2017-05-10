@@ -43,7 +43,7 @@ kwmc config padding 32 10 10 10
 kwmc config gap 10 10
 
 # Default tiling mode for Kwm (bsp | monocle | float)
-kwmc config tiling bsp
+kwmc config tiling monocle
 
 # Automatically float windows that fail to resize
 kwmc config float-non-resizable on
@@ -93,24 +93,23 @@ Override default settings for space 1 on screen 0
 
 kwmc config space 0 1 padding 150 150 150 150
 kwmc config space 0 1 name home
-kwmc config space 0 1 mode monocle
 
 kwmc config space 0 2 name browser
-kwmc config space 0 2 mode monocle
 
 kwmc config space 0 3 name editor
+kwmc config space 0 3 mode bsp
 
 kwmc config space 0 4 name terminal
+kwmc config space 0 4 mode bsp
 
-kwmc config space 0 5 mode monocle
 kwmc config space 0 5 name other
 
 kwmc config space 0 6 padding 150 150 150 150
-kwmc config space 0 6 mode monocle
 kwmc config space 0 6 name chat
 
 kwmc config space 1 1 name external
-kwmc config space 1 1 mode monocle
+
+kwmc config space 1 2 name other
 
 /*
 Override default settings for screen 1
@@ -142,6 +141,7 @@ blacklists an application from Kwms tiling
 */
 
 kwmc rule owner="BetterZip" properties={float="true"}
+kwmc rule owner="Finder" name="Copy" properties={float="true"}
 kwmc rule owner="Photoshop" properties={float="true"}
 kwmc rule owner="Cyberduck" properties={float="true"}
 kwmc rule owner="Font Book" properties={float="true"}
@@ -158,12 +158,12 @@ if the screen exists.
    kwmc rule owner="iTunes" properties={display="1"}
 */
 
-kwmc rule owner="Franz" properties={display="0"; space="6"}
-kwmc rule owner="Spotify" properties={display="0"; space="5"}
-kwmc rule owner="SourceTree" properties={display="0"; space="5"}
-kwmc rule owner="Sublime Text" properties={display="0"; space="3"}
-kwmc rule owner="Webstorm" properties={display="0"; space="3"}
-kwmc rule owner="Preview" properties={display="0"; space="1"}
+#kwmc rule owner="Franz" properties={display="0"; space="6"}
+#kwmc rule owner="Spotify" properties={display="0"; space="5"}
+#kwmc rule owner="SourceTree" properties={display="0"; space="5"}
+#kwmc rule owner="Sublime Text" properties={display="0"; space="3"}
+#kwmc rule owner="Webstorm" properties={display="0"; space="3"}
+#kwmc rule owner="Preview" properties={display="0"; space="1"}
 
 # Enable border for focused window
 kwmc config border focused on

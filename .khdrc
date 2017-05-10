@@ -4,11 +4,16 @@ khd kwm on
 # set color of default mode
 khd mode default color 0xFF8EC13E
 
-# Enable the prefix mode
-khd mode prefix prefix on
-khd mode prefix timeout 1
-khd mode prefix restore default
-khd mode prefix color 0xFFFC703F
+# Enable the resize mode
+khd mode resize prefix on
+khd mode resize timeout 1
+khd mode resize restore default
+khd mode resize color 0xFFFC703F
+
+khd mode padding prefix on
+khd mode padding timeout 1
+khd mode padding restore default
+khd mode padding color 0xFFFF0000
 
 # Quit Kwm
 cmd + alt + ctrl - q : kwmc quit
@@ -38,29 +43,42 @@ cmd + ctrl - x : kwmc window -mk focused
 cmd + ctrl - v : kwmc window -m mark
 
 # Modify Container
-ctrl + shift - t : kwmc window -c split-mode toggle
+cmd + ctrl - t : kwmc window -c split-mode toggle
 # ctrl + shift - 0x32 : kwmc window -c type toggle
 
 # Resize windows - 0x32 = `
-ctrl + shift - 0x32 : khd -e "mode activate prefix"
+ctrl + shift - 0x32 : khd -e "mode activate resize"
+ctrl + shift - p : khd -e "mode activate padding"
 
-prefix - left : kwmc window -c expand 0.05 west
-prefix + shift - left : kwmc window -c reduce 0.05 west
-prefix - down : kwmc window -c expand 0.05 south
-prefix + shift - down : kwmc window -c reduce 0.05 south
-prefix - up : kwmc window -c expand 0.05 north
-prefix + shift - up : kwmc window -c reduce 0.05 north
-prefix - right : kwmc window -c expand 0.05 east
-prefix + shift - right : kwmc window -c reduce 0.05 east
+resize - left : kwmc window -c expand 0.05 west
+resize + shift - left : kwmc window -c reduce 0.05 west
+resize - down : kwmc window -c expand 0.05 south
+resize + shift - down : kwmc window -c reduce 0.05 south
+resize - up : kwmc window -c expand 0.05 north
+resize + shift - up : kwmc window -c reduce 0.05 north
+resize - right : kwmc window -c expand 0.05 east
+resize + shift - right : kwmc window -c reduce 0.05 east
 
 # Move focused window in same screen
-prefix + ctrl - left : kwmc window -s west
-prefix + ctrl - down : kwmc window -s south
-prefix + ctrl - up : kwmc window -s north
-prefix + ctrl - right : kwmc window -s east
+resize + ctrl - left : kwmc window -s west
+resize + ctrl - down : kwmc window -s south
+resize + ctrl - up : kwmc window -s north
+resize + ctrl - right : kwmc window -s east
 
 # Float current focused window
-prefix - f : kwmc window -t focused
+resize - z : kwmc window -z fullscreen
+resize - a : kwmc window -r focused
+resize - c : kwmc window -t focused
+
+# Adjust padding of active space
+padding - up : kwmc space -p increase top
+padding - down : kwmc space -p increase bottom
+padding - left : kwmc space -p increase left
+padding - right : kwmc space -p increase right
+padding + shift - up : kwmc space -p decrease top
+padding + shift - down : kwmc space -p decrease bottom
+padding + shift - left : kwmc space -p decrease left
+padding + shift - right : kwmc space -p decrease right
 
 # Change focus between spaces, skipping transitions animation
 # cmd - 1 : kwmc space -fExperimental 1
@@ -91,3 +109,4 @@ cmd + alt + ctrl - 1 : kwmc window -m display 1
 
 # Custom keybinds
 #ctrl + shift - 0x92 : pmset sleepnow
+
