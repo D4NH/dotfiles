@@ -12,13 +12,13 @@
 
 ## Screenshots
 
-![Screenshots](http://i.imgur.com/rW3NYGM.jpg "Clean")
+![Screenshots](http://i.imgur.com/B9p5VjW.png "Clean")
 
-![Screenshots](http://i.imgur.com/0z0iRIQ.png "Browser")
+![Screenshots](http://i.imgur.com/t3FjhPu.png "Browser")
 
-![Screenshots](http://i.imgur.com/n8tp1J7.png "Editor")
+![Screenshots](http://i.imgur.com/Z6Bf4dX.png "Editor")
 
-![Screenshots](http://i.imgur.com/wipWuXE.png "Terminal")
+![Screenshots](http://i.imgur.com/YlqkJRs.png "Terminal")
 
 ## Links
 
