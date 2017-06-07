@@ -15,6 +15,11 @@ khd mode padding timeout 1
 khd mode padding restore default
 khd mode padding color 0xFFFF0000
 
+khd mode scratchpad prefix on
+khd mode scratchpad timeout 1
+khd mode scratchpad restore default
+khd mode scratchpad color 0xFFD8D874
+
 # Quit Kwm
 cmd + alt + ctrl - q : kwmc quit
 
@@ -49,6 +54,7 @@ cmd + ctrl - t : kwmc window -c split-mode toggle
 # Resize windows - 0x32 = `
 ctrl + shift - 0x32 : khd -e "mode activate resize"
 ctrl + shift - p : khd -e "mode activate padding"
+ctrl + shift - s : khd -e "mode activate scratchpad"
 
 resize - left : kwmc window -c expand 0.05 west
 resize + shift - left : kwmc window -c reduce 0.05 west
@@ -79,6 +85,13 @@ padding + shift - up : kwmc space -p decrease top
 padding + shift - down : kwmc space -p decrease bottom
 padding + shift - left : kwmc space -p decrease left
 padding + shift - right : kwmc space -p decrease right
+
+# Scratchpad
+scratchpad - a : kwmc scratchpad add
+scratchpad - r : kwmc scratchpad remove
+scratchpad - 1 : kwmc scratchpad toggle 0
+scratchpad - 2 : kwmc scratchpad toggle 1
+scratchpad - 3 : kwmc scratchpad toggle 2
 
 # Change focus between spaces, skipping transitions animation
 # cmd - 1 : kwmc space -fExperimental 1

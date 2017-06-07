@@ -130,6 +130,7 @@ kwmc config spawn right
     This is because some applications do not have the
     AXWindowRole and AXStandardWindowSubRole
 */
+# Allow Kwm to tile borderless iTerm2 windows
 kwmc rule owner="iTerm2" properties={role="AXDialog"}
 
 /*
@@ -157,13 +158,6 @@ if the screen exists.
 
    kwmc rule owner="iTunes" properties={display="1"}
 */
-
-#kwmc rule owner="Franz" properties={display="0"; space="6"}
-#kwmc rule owner="Spotify" properties={display="0"; space="5"}
-#kwmc rule owner="SourceTree" properties={display="0"; space="5"}
-#kwmc rule owner="Sublime Text" properties={display="0"; space="3"}
-#kwmc rule owner="Webstorm" properties={display="0"; space="3"}
-#kwmc rule owner="Preview" properties={display="0"; space="1"}
 
 # Enable border for focused window
 kwmc config border focused on
