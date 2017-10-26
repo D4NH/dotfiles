@@ -8,12 +8,6 @@ export ZSH=/Users/D4NH/.oh-my-zsh
 # ZSH_THEME="gallois"
 ZSH_THEME="bira"
 
-#BASE16_SHELL="$HOME/.config/base16-shell/base16-material.dark.sh"
-#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -64,8 +58,9 @@ export PATH="/Users/D4NH/.gvm/vertx/current/bin:/Users/D4NH/.gvm/springboot/curr
 export PATH="/usr/local/sbin:$PATH"
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/build-tools
-export EDITOR='subl'
+export EDITOR='vim'
 export PATH=$(npm bin):$PATH webpack
+export PATH="$(yarn global bin):$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -90,20 +85,15 @@ export LANG=en_US.UTF-8
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# alias zshconfig="vi ~/.zshrc"
 alias edit="open -a Sublime\ Text"
 alias npmc="rm -rf node_modules && npm cache clean && npm install"
 alias info="neofetch"
-alias ez="vim ~/.zshrc"
-alias vh="vim ~/.hotkeys"
-alias ld="gls -lh --color --group-directories-first"
 alias lt="tree -L 1 -C -N --dirsfirst"
-alias lda="gls -lhA --color --group-directories-first"
 alias lta="tree -L 1 -C -N -a --dirsfirst"
-alias cp="cp -v"
-alias mv="mv -v"
-alias rm="rm -v"
+#alias cp="cp -v"
+#alias mv="mv -v"
+#alias rm="rm -v"
 alias preview="open -a Preview"
 alias serve="http-server -a localhost -p 9999 -c-1 --utc"
 # IP addresses
@@ -112,9 +102,16 @@ alias localip="ipconfig getifaddr en1"
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-alias npm-exec="PATH=$(npm bin):$PATH"
-alias docker-timesync="docker run -it --rm --privileged --pid=host debian nsenter -t 1 -m -u -n -i date -u $(date -u +%m%d%H%M%Y)"
+alias docker-reset="docker rm -f $(docker ps -a -q) && docker rmi $(docker images -q)"
 
 # custom boot scripts
 neofetch
 terminal-notifier -title 'iTerm2' -message 'Welcome Danh Nguyen'
+
+if [ -f "$BASE16_SHELL" ] && [ -n "$ITERM_SESSION_ID" ] ; then
+    source $BASE16_SHELL
+fi
+
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+

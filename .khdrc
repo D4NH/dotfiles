@@ -20,9 +20,11 @@
 khd mode default on_enter kwmc config border focused color 0xFF8EC13E
 khd mode resize on_enter kwmc config border focused color 0xFFFC703F
 khd mode padding on_enter kwmc config border focused color 0xFFFF0000
+
 khd mode resize prefix on
 khd mode resize timeout 1
 khd mode resize restore default
+
 khd mode padding prefix on
 khd mode padding timeout 1
 khd mode padding restore default
@@ -32,35 +34,29 @@ khd mode padding restore default
 # this is enabled by default, and must be explicitly set to 'off'.
 khd void_unlisted_bind off
 
-# Quit Kwm
-cmd + alt + ctrl - q : kwmc quit
-
-# Reload Khd config
-cmd + ctrl - r : khd -e "reload"
-
 # Launch terminal
-cmd - return : open -na /Applications/iTerm.app
+ctrl - return : open -na /Applications/iTerm.app
 
 # Set Space Tiling Mode To BSP
-cmd + alt + ctrl - b : kwmc space -t bsp
+ctrl + alt - b : kwmc space -t bsp
 
 # Set Space Tiling Mode To Monocle
-cmd + alt + ctrl - m : kwmc space -t monocle
+ctrl + alt - m : kwmc space -t monocle
 
 # Set Space Tiling Mode To Floating
-cmd + alt + ctrl - f : kwmc space -t float
+ctrl + alt - f : kwmc space -t float
 
 # Rotate Window-Tree By 90degrees (Clockwise)
-cmd + alt + ctrl - r : kwmc tree rotate 90
+ctrl + alt - r : kwmc tree rotate 90
 
 # Mark focused window
-cmd + ctrl - x : kwmc window -mk focused
+ctrl + alt - x : kwmc window -mk focused
 
 # Detach Marked Window And Reinsert At Focused Window
-cmd + ctrl - v : kwmc window -m mark
+ctrl + alt - v : kwmc window -m mark
 
 # Modify Container
-cmd + ctrl - t : kwmc window -c split-mode toggle
+ctrl + alt - t : kwmc window -c split-mode toggle
 
 # Resize windows - 0x32 = `
 ctrl + shift - 0x32 : khd -e "mode activate resize"
@@ -95,11 +91,13 @@ padding + shift - up : kwmc space -p decrease top
 padding + shift - down : kwmc space -p decrease bottom
 padding + shift - left : kwmc space -p decrease left
 padding + shift - right : kwmc space -p decrease right
+padding - a : kwmc space -p increase all
 
 # Move focused window to space
-cmd + alt + ctrl - left : kwmc window -m space left
-cmd + alt + ctrl - right : kwmc window -m space right
+ctrl + alt - left : kwmc window -m space left
+ctrl + alt - right : kwmc window -m space right
 
 # Move focused window to screen
-cmd + alt + ctrl - 0 : kwmc window -m display 0
-cmd + alt + ctrl - 1 : kwmc window -m display 1
+ctrl + alt - 0 : kwmc window -m display 0
+ctrl + alt - 1 : kwmc window -m display 1
+
