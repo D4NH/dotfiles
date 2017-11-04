@@ -1,21 +1,3 @@
-### KWM settings
-# Enable kwm compatibility mode
-#khd kwm on
-
-# set color of default mode
-#khd mode default color 0xFF8EC13E
-
-# Enable the resize mode
-#khd mode resize prefix on
-#khd mode resize timeout 1
-#khd mode resize restore default
-#khd mode resize color 0xFFFC703F
-
-#khd mode padding prefix on
-#khd mode padding timeout 1
-#khd mode padding restore default
-#khd mode padding color 0xFFFF0000
-
 ### KWM settings - for KHD v3.0.0
 khd mode default on_enter kwmc config border focused color 0xFF8EC13E
 khd mode resize on_enter kwmc config border focused color 0xFFFC703F
@@ -92,6 +74,7 @@ padding + shift - down : kwmc space -p decrease bottom
 padding + shift - left : kwmc space -p decrease left
 padding + shift - right : kwmc space -p decrease right
 padding - a : kwmc space -p increase all
+padding + shift - a : kwmc space -p decrease all
 
 # Move focused window to space
 ctrl + alt - left : kwmc window -m space left
