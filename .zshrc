@@ -54,14 +54,14 @@ plugins=(git brew command-not-found history npm sudo zsh-256color zsh-syntax-hig
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH="/Users/D4NH/.gvm/vertx/current/bin:/Users/D4NH/.gvm/springboot/current/bin:/Users/D4NH/.gvm/lazybones/current/bin:/Users/D4NH/.gvm/jbake/current/bin:/Users/D4NH/.gvm/groovyserv/current/bin:/Users/D4NH/.gvm/groovy/current/bin:/Users/D4NH/.gvm/griffon/current/bin:/Users/D4NH/.gvm/grails/current/bin:/Users/D4NH/.gvm/gradle/current/bin:/Users/D4NH/.gvm/glide/current/bin:/Users/D4NH/.gvm/gaiden/current/bin:/Users/D4NH/.gvm/crash/current/bin:/Users/D4NH/.gvm/asciidoctorj/current/bin:/Users/D4NH/.jenv/shims:/Users/D4NH/.jenv/bin:/opt/local/bin:/opt/local/sbin:/Users/D4NH/pebble-dev/PebbleSDK-current/bin:/usr/local/bin:/usr/bin:/usr/.bin:/Users/D4NH/.bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin"
-export PATH="/usr/local/sbin:$PATH"
 export ANDROID_HOME=/usr/local/opt/android-sdk
-export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/build-tools
 export EDITOR='vim'
+export PATH="/Users/D4NH/.gvm/asciidoctorj/current/bin:/Users/D4NH/.jenv/shims:/Users/D4NH/.jenv/bin:/opt/local/bin:/opt/local/sbin:/Users/D4NH/pebble-dev/PebbleSDK-current/bin:/usr/local/bin:/usr/bin:/usr/.bin:/Users/D4NH/.bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin"
+export PATH="/usr/local/sbin:$PATH"
+export PATH=/Library/Frameworks/Mono.framework/Versions/Current/bin:${PATH}
+export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/build-tools
 export PATH=$(npm bin):$PATH webpack
 export PATH="$(yarn global bin):$PATH"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -73,9 +73,6 @@ export LANG=en_US.UTF-8
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
@@ -86,7 +83,7 @@ export LANG=en_US.UTF-8
 #
 # Example aliases
 # alias zshconfig="vi ~/.zshrc"
-alias edit="open -a Sublime\ Text"
+alias edit="code"
 alias npmc="rm -rf node_modules && npm cache clean && npm install"
 alias info="neofetch"
 alias lt="tree -L 1 -C -N --dirsfirst"
@@ -114,4 +111,3 @@ fi
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-
