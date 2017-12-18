@@ -1,4 +1,4 @@
-command: 'echo "$(/usr/local/bin/kwmc query space active mode) $(/usr/local/bin/kwmc query space active name) | $(/usr/local/bin/kwmc query window focused name)"'
+command: 'echo "Danh Nguyen [$(/usr/local/bin/chunkc tiling::query --desktop id)]"'
 
 refreshFrequency: 1000 # ms
 
@@ -22,8 +22,8 @@ style: """
   color: white
   font: 11px Input
   height: 16px
-  left: 10px
-  top: 5px
+  left: 20px
+  top: 15px
 
   width: 500px
   overflow: hidden
@@ -32,6 +32,6 @@ style: """
 
   .text
     margin-left: 5px
-    font-family: 'Source Code Pro for Powerline'
+    font-family: 'Hack'
     font-weight: bold
 """

@@ -6,10 +6,10 @@ render: (output) ->
   """
 
 style: """
-  top: 0
-  left: 0
+  top: 10px
+  left: 10px
+  right: 10px
   height: 23px
-  width: 100%
   background-color: #171717
   z-index: -1
 """
