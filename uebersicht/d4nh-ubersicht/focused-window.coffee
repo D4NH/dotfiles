@@ -1,4 +1,4 @@
-command: 'echo "$(/usr/local/bin/chunkc tiling::query --window owner)"'
+command: 'echo "$(/usr/local/bin/chunkc tiling::query --window owner)"' + ': "$(/usr/local/bin/chunkc tiling::query --window name)"'
 
 refreshFrequency: 1000 # ms
 

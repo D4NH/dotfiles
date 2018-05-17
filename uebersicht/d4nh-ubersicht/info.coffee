@@ -16,7 +16,6 @@
     wifi   : "/System/Library/PrivateFrameworks/Apple80211.framework/" +
              "Versions/Current/Resources/airport -I | " +
              "sed -e \"s/^ *SSID: //p\" -e d"
-    volume : "osascript -e 'output volume of (get volume settings)'"
 
   #
   # ─── COLORS ─────────────────────────────────────────────────────────────────
@@ -40,8 +39,7 @@
            "$(#{ commands.battery }):::" +
            "$(#{ commands.time }):::" +
            "$(#{ commands.date }):::" +
-           "$(#{ commands.wifi }):::" +
-           "$(#{ commands.volume }):::"
+           "$(#{ commands.wifi }):::"
 
   #
   # ─── REFRESH ────────────────────────────────────────────────────────────────
@@ -57,10 +55,6 @@
     """
     <link rel="stylesheet" href="./font-awesome/font-awesome.min.css" />
 
-    <div class="volume">
-      <span class="volume-icon"></span>
-      <span class="volume-output"></span>
-    </div>
     <div class="wifi">
       <i class="fa fa-wifi"></i>
       <span class="wifi-output"></span>
@@ -90,16 +84,13 @@
     time    = output[ 1 ]
     date    = output[ 2 ]
     wifi    = output[ 3 ]
-    volume  = output[ 4 ]
 
     $( ".battery-output" ) .text( "#{ battery }" )
     $( ".time-output" )    .text( "#{ time }" )
     $( ".date-output" )    .text( "#{ date }" )
     $( ".wifi-output" )    .text( "#{ wifi }" )
-    $( ".volume-output" )  .text( "#{ volume }%" )
 
     @handleBattery( Number( battery.replace( /%/g, "" ) ) )
-    @handleVolume( Number( volume ) )
 
   #
   # ─── HANDLE BATTERY ─────────────────────────────────────────────────────────
@@ -113,17 +104,6 @@
       when percentage <=  75 then "fa-battery-3"
       when percentage <= 100 then "fa-battery-4"
     $( ".battery-icon" ).html( "<i class=\"fa #{ batteryIcon }\"></i>" )
-
-  #
-  # ─── HANDLE VOLUME ──────────────────────────────────────────────────────────
-  #
-
-  handleVolume: ( volume ) ->
-    volumeIcon = switch
-      when volume ==   0 then "fa-volume-off"
-      when volume <=  50 then "fa-volume-down"
-      when volume <= 100 then "fa-volume-up"
-    $( ".volume-icon" ).html( "<i class=\"fa #{ volumeIcon }\"></i>" )
 
   #
   # ─── STYLE ──────────────────────────────────────────────────────────────────
