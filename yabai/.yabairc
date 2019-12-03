@@ -1,0 +1,62 @@
+#!/usr/bin/env sh
+
+# set default layout
+yabai -m config layout                          float
+
+# set all padding and gaps
+yabai -m config top_padding                     45
+yabai -m config bottom_padding                  10
+yabai -m config left_padding                    10
+yabai -m config right_padding                   10
+yabai -m config window_gap                      10
+
+# override padding for spaces
+yabai -m config --space 1 layout                bsp
+yabai -m config --space 1 top_padding           200
+yabai -m config --space 1 bottom_padding        200
+yabai -m config --space 1 left_padding          150
+yabai -m config --space 1 right_padding         150
+yabai -m config --space 4 layout                bsp
+yabai -m config --space 6 layout                bsp
+yabai -m config --space 6 top_padding           200
+yabai -m config --space 6 bottom_padding        200
+yabai -m config --space 6 left_padding          150
+yabai -m config --space 6 right_padding         150
+
+# set mouse interactions
+yabai -m config mouse_modifier                  fn
+yabai -m config mouse_action1                   resize
+#yabai -m config mouse_action2                   move
+# set focus follows mouse mode (default: off, options: off, autoraise, autofocus)
+yabai -m config mouse_follows_focus             off
+# set mouse follows focus mode (default: off)
+yabai -m config focus_follows_mouse             off
+
+# modify window shadows
+yabai -m config window_shadow                   on
+
+# set window border
+yabai -m config window_border                   on
+yabai -m config window_border_width             2
+yabai -m config active_window_border_color      0xff8ec13e
+yabai -m config normal_window_border_color      0xff505050
+yabai -m config insert_window_border_color      0xffd75f5f
+
+# bar settings
+yabai -m config status_bar                      off
+
+# custom window settings
+yabai -m rule --add title='Preferences$' manage=off topmost=on
+yabai -m rule --add app="^BetterTouchTool$" manage=off
+yabai -m rule --add app="^Photoshop$" manage=off
+yabai -m rule --add app="^DWR Next$" manage=off
+yabai -m rule --add app="^Steam$" manage=off
+yabai -m rule --add app="^Steam$" manage=off
+yabai -m rule --add app="^The Archive Browser$" manage=off
+yabai -m rule --add app="^mpv$" manage=off
+yabai -m rule --add app="^Simulator" manage=off
+
+# refresh my Übersicht bar when the space changes
+yabai -m signal --add event=window_focused action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"bar-widget-focused-window-coffee\"'"
+
+echo "yabai configuration loaded.."

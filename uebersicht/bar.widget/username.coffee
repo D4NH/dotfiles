@@ -1,4 +1,5 @@
-command: 'echo "Danh Nguyen [$(/usr/local/bin/chunkc tiling::query --desktop id)]"'
+# command: 'echo "Danh Nguyen [$(/usr/local/bin/chunkc tiling::query --desktop id)]"'
+command: 'echo "Danh Nguyen"'
 
 refreshFrequency: 1000 # ms
 

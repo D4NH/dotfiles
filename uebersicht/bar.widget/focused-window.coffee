@@ -1,6 +1,8 @@
-command: 'echo "$(/usr/local/bin/chunkc tiling::query --window owner)"' + ': "$(/usr/local/bin/chunkc tiling::query --window name)"'
+# command: 'echo "$(/usr/local/bin/chunkc tiling::query --window owner)"' + ': "$(/usr/local/bin/chunkc tiling::query --window name)"'
+# command: 'echo "$(/usr/local/bin/yabai -m query --windows --window | /usr/local/bin/jq -r .app)"' + ': "$(/usr/local/bin/yabai -m query --windows --window | /usr/local/bin/jq -r .title)"'
+command: 'echo "$(/usr/local/bin/yabai -m query --windows --window | /usr/local/bin/jq -r .app)"'
 
-refreshFrequency: 1000 # ms
+refreshFrequency: false
 
 render: (output) ->
   """

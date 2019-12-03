@@ -1,0 +1,69 @@
+### skhd settings for yabai
+
+# change layout of desktop
+ctrl + alt - b : yabai -m space --layout bsp
+ctrl + alt - f : yabai -m space --layout float
+
+# rotate tree
+ctrl + alt - r : yabai -m space --rotate 90
+
+# toggle split
+alt - r : yabai -m window --toggle split
+
+# equalize size of windows
+alt - e : yabai -m space --balance
+
+# toggle all windows on current space fullscreen
+ctrl + alt - a : yabai -m query --windows --space \
+    | jq -re '.[] | select(."zoom-fullscreen" == 0) | .id' \
+    | xargs -I{} yabai -m window {} --toggle zoom-fullscreen
+
+ctrl + alt - z : yabai -m query --windows --space \
+    | jq -re '.[] | select(."zoom-fullscreen" == 1) | .id' \
+    | xargs -I{} yabai -m window {} --toggle zoom-fullscreen
+
+# toggle float window and center on screen
+alt - g : yabai -m window --toggle float;\
+          yabai -m window --grid 4:4:1:1:2:2
+
+# float window (picture-in-picture)
+#alt - s : yabai -m window --toggle sticky
+
+# make floating window fill screen
+cmd + alt - up : yabai -m window --grid 1:1:0:0:1:1
+
+# make floating window fill left-half of screen
+cmd + alt - a : yabai -m window --grid 1:2:0:0:1:1
+
+# make floating window fill right-half of screen
+cmd + alt - d : yabai -m window --grid 1:2:1:0:1:1
+
+# increase/decrease region size
+shift + ctrl - left : chunkc tiling::window --use-temporary-ratio 0.01 --adjust-window-edge west
+shift + alt - left : chunkc tiling::window --use-temporary-ratio -0.01 --adjust-window-edge west
+shift + ctrl - down : chunkc tiling::window --use-temporary-ratio 0.01 --adjust-window-edge south
+shift + alt - down : chunkc tiling::window --use-temporary-ratio -0.01 --adjust-window-edge south
+shift + ctrl - up : chunkc tiling::window --use-temporary-ratio 0.01 --adjust-window-edge north
+shift + alt - up : chunkc tiling::window --use-temporary-ratio -0.01 --adjust-window-edge north
+shift + ctrl - right : chunkc tiling::window --use-temporary-ratio 0.01 --adjust-window-edge east
+shift + alt - right : chunkc tiling::window --use-temporary-ratio -0.01 --adjust-window-edge east
+
+# swap window
+ctrl + alt - left : yabai -m window --swap west
+ctrl + alt - down : yabai -m window --swap south
+ctrl + alt - up : yabai -m window --swap north
+ctrl + alt - right : yabai -m window --swap east
+
+# move window
+shift + ctrl + alt - left : yabai -m window --warp west
+shift + ctrl + alt - down : yabai -m window --warp south
+shift + ctrl + alt - up : yabai -m window --warp north
+shift + ctrl + alt - right : yabai -m window --warp --warp east
+
+# send window to monitor
+ctrl + alt - 1 : yabai -m window --display 1; yabai -m display --focus 1
+ctrl + alt - 2 : yabai -m window --display 2; yabai -m display --focus 2
+
+# focus desktop
+#cmd + alt - left : yabai -m space --focus prev
+#cmd + alt - right : yabai -m space --focus next
