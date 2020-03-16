@@ -1,7 +1,7 @@
 # command: 'echo "Danh Nguyen [$(/usr/local/bin/chunkc tiling::query --desktop id)]"'
 command: 'echo "Danh Nguyen"'
 
-refreshFrequency: 1000 # ms
+refreshFrequency: false # ms
 
 render: (output) ->
   """
@@ -21,10 +21,10 @@ dotted: (str, limit) ->
 style: """
   -webkit-font-smoothing: antialiased
   color: white
-  font: 11px Input
+  font: 11px SauceCodeProNerdFontCompleteM-Regular
   height: 16px
   left: 20px
-  top: 15px
+  top: 14px
 
   width: 500px
   overflow: hidden
@@ -33,6 +33,6 @@ style: """
 
   .text
     margin-left: 5px
-    font-family: 'Hack'
+    font-family: SauceCodeProNerdFontCompleteM-Regular
     font-weight: bold
 """

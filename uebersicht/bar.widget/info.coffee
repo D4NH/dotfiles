@@ -45,7 +45,7 @@
   # ─── REFRESH ────────────────────────────────────────────────────────────────
   #
 
-  refreshFrequency: 1000
+  refreshFrequency: false
 
   #
   # ─── RENDER ─────────────────────────────────────────────────────────────────
@@ -115,7 +115,7 @@
     .time
       color: #{ colors.black }
       padding: 5px 5px 4px 5px
-      margin-top: -5px
+      margin-top: -4px
       margin-right: 10px
       background-color: #{ colors.green }
     .date
@@ -129,9 +129,9 @@
     div
       margin-right: 15px
 
-    top: 15px
+    top: 14px
     right: 0
-    font-family: 'Hack'
+    font-family: SauceCodeProNerdFontCompleteM-Regular
     font-size: 11px
     font-weight: bold
     -webkit-font-smoothing: antialiased

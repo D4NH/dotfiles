@@ -1,6 +1,6 @@
-# command: 'echo "$(/usr/local/bin/chunkc tiling::query --window owner)"' + ': "$(/usr/local/bin/chunkc tiling::query --window name)"'
 # command: 'echo "$(/usr/local/bin/yabai -m query --windows --window | /usr/local/bin/jq -r .app)"' + ': "$(/usr/local/bin/yabai -m query --windows --window | /usr/local/bin/jq -r .title)"'
-command: 'echo "$(/usr/local/bin/yabai -m query --windows --window | /usr/local/bin/jq -r .app)"'
+# command: 'echo "$(yabai -m query --windows --window | jq -r .app)"'
+command: 'echo $(yabai -m query --windows | jq -r \'.[] | select( .focused | contains(1)) | .app\'): $(yabai -m query --windows | jq -r \'.[] | select( .focused | contains(1)) | .title\')'
 
 refreshFrequency: false
 
@@ -20,7 +20,7 @@ dotted: (str, limit) ->
 style: """
   -webkit-font-smoothing: antialiased
   color: white
-  font: 11px Hack
+  font: 11px SauceCodeProNerdFontCompleteM-Regular
   top: 14px
   text-align: center
   margin: auto
