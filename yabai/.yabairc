@@ -60,7 +60,7 @@ yabai -m rule --add app="^Simulator" manage=off
 #yabai -m signal --add event=space_changed action="osascript -e 'display notification \"active space changed.\" with title \"yabai\" subtitle \"signal\"'"
 yabai -m signal --add event=window_focused action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"bar-widget-focused-window-coffee\"'"
 yabai -m signal --add event=window_title_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"bar-widget-focused-window-coffee\"'"
-yabai -m signal --add event=space_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"bar-widget-focused-window-coffee\"'"
+#yabai -m signal --add event=space_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"bar-widget-focused-window-coffee\"'"
 
 
 echo "yabai configuration loaded.."
