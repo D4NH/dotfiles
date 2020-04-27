@@ -15,37 +15,39 @@ yabai -m config --space 1 top_padding           200
 yabai -m config --space 1 bottom_padding        200
 yabai -m config --space 1 left_padding          150
 yabai -m config --space 1 right_padding         150
-yabai -m config --space 4 layout                bsp
-# yabai -m config --space 6 layout                bsp
-# yabai -m config --space 6 top_padding           200
-# yabai -m config --space 6 bottom_padding        200
-# yabai -m config --space 6 left_padding          150
-# yabai -m config --space 6 right_padding         150
+
+# global settings
+yabai -m config status_bar                      off
+yabai -m config window_shadow                   on
+yabai -m config window_placement                second_child
 
 # set mouse interactions
 #yabai -m config mouse_modifier                  fn
 #yabai -m config mouse_action1                   resize
 #yabai -m config mouse_action2                   move
-#yabai -m config mouse_follows_focus             off
-# set focus follows mouse mode (default: off, options: off, autoraise, autofocus)
-#yabai -m config focus_follows_mouse             off
 
-# modify window shadows
-yabai -m config window_shadow                   on
+# set focus follows mouse mode (default: off, options: autoraise, autofocus)
+#yabai -m config focus_follows_mouse             autofocus
+#yabai -m config mouse_follows_focus             off
 
 # set window border
-yabai -m config window_border                   on
-yabai -m config window_border_width             2
-yabai -m config window_border_radius            0
-yabai -m config active_window_border_color      0xff8ec13e
-yabai -m config normal_window_border_color      0xff505050
-yabai -m config insert_window_border_color      0xffd75f5f
+yabai -m config window_border                   off
+#yabai -m config window_border_placement         inset
+#yabai -m config window_border_width             2
+#yabai -m config window_border_radius            -1.0
+#yabai -m config active_window_border_topmost    on
+#yabai -m config active_window_border_color      0xff8ec13e
+#yabai -m config normal_window_border_color      0xff505050
+#yabai -m config insert_window_border_color      0xffd75f5f
 
-# bar settings
-yabai -m config status_bar                      off
+# window opacity settings
+yabai -m config window_opacity                  off
+#yabai -m config window_opacity_duration         0.0
+#yabai -m config active_window_opacity           1.0
+#yabai -m config normal_window_opacity           0.90
 
 # custom window settings
-yabai -m rule --add title="Preferences$" manage=off topmost=on
+yabai -m rule --add title="Preferences$" manage=off layer=above
 yabai -m rule --add app="^BetterTouchTool$" manage=off
 yabai -m rule --add app="^Firefox$" title="^Opening .*$" manage=off
 yabai -m rule --add app="^Photoshop$" manage=off
@@ -55,10 +57,11 @@ yabai -m rule --add app="^mpv$" manage=off
 yabai -m rule --add app="^Simulator" manage=off
 
 # refresh my Übersicht bar when the space changes
-# yabai -m signal --add event=space_changed action="osascript -e 'display notification \"active space changed.\" with title \"yabai\" subtitle \"signal\"'"
-# yabai -m signal --add event=window_focused action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"bar-widget-focused-window-coffee\"'"
+#yabai -m signal --add event=space_changed action="osascript -e 'display notification \"active space changed.\" with title \"yabai\" subtitle \"signal\"'"
+yabai -m signal --add event=window_focused action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"bar-widget-focused-window-coffee\"'"
 yabai -m signal --add event=window_title_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"bar-widget-focused-window-coffee\"'"
 yabai -m signal --add event=space_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"bar-widget-focused-window-coffee\"'"
 
 
 echo "yabai configuration loaded.."
+
