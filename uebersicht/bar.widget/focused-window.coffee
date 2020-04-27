@@ -1,5 +1,3 @@
-# command: 'echo "$(/usr/local/bin/yabai -m query --windows --window | /usr/local/bin/jq -r .app)"' + ': "$(/usr/local/bin/yabai -m query --windows --window | /usr/local/bin/jq -r .title)"'
-# command: 'echo "$(yabai -m query --windows --window | jq -r .app)"'
 command: 'echo $(yabai -m query --windows | jq -r \'.[] | select( .focused | contains(1)) | .app\'): $(yabai -m query --windows | jq -r \'.[] | select( .focused | contains(1)) | .title\')'
 
 refreshFrequency: false
