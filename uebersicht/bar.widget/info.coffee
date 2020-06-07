@@ -114,8 +114,8 @@
       color: #{ colors.white }
     .time
       color: #{ colors.black }
-      padding: 5px 5px 4px 5px
-      margin-top: -4px
+      padding: 5px
+      margin-top: -5px
       margin-right: 10px
       background-color: #{ colors.green }
     .date
@@ -131,7 +131,7 @@
 
     top: 14px
     right: 0
-    font-family: SauceCodeProNerdFontCompleteM-Regular
+    font-family: 'Meslo LG S for Powerline'
     font-size: 11px
     font-weight: bold
     -webkit-font-smoothing: antialiased

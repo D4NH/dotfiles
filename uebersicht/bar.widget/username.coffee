@@ -21,7 +21,7 @@ dotted: (str, limit) ->
 style: """
   -webkit-font-smoothing: antialiased
   color: white
-  font: 11px SauceCodeProNerdFontCompleteM-Regular
+  font: 11px 'Meslo LG S for Powerline'
   height: 16px
   left: 20px
   top: 14px
@@ -30,9 +30,4 @@ style: """
   overflow: hidden
   text-overflow: ellipsis
   white-space: nowrap
-
-  .text
-    margin-left: 5px
-    font-family: SauceCodeProNerdFontCompleteM-Regular
-    font-weight: bold
 """

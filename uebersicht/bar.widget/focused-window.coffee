@@ -18,7 +18,7 @@ dotted: (str, limit) ->
 style: """
   -webkit-font-smoothing: antialiased
   color: white
-  font: 11px SauceCodeProNerdFontCompleteM-Regular
+  font: 11px 'Meslo LG S for Powerline'
   top: 14px
   text-align: center
   margin: auto
