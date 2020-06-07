@@ -16,7 +16,7 @@ ZSH_THEME="bira"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+# DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -41,16 +41,24 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="yyyy-mm-dd"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_DISABLE_COMPFIX=true
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew command-not-found history npm sudo zsh-256color zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git brew command-not-found history npm sudo zsh-syntax-highlighting zsh-autosuggestions)
+
+# Base 16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -60,8 +68,8 @@ export PATH="/Users/D4NH/.gvm/asciidoctorj/current/bin:/Users/D4NH/.jenv/shims:/
 export PATH="/usr/local/sbin:$PATH"
 export PATH=/Library/Frameworks/Mono.framework/Versions/Current/bin:${PATH}
 export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/build-tools
-export PATH=$(npm bin):$PATH webpack
-export PATH="$(yarn global bin):$PATH"
+export PATH=~/.npm-global/bin:$PATH
+#export PATH=$(npm bin):$PATH webpack
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -99,15 +107,10 @@ alias localip="ipconfig getifaddr en1"
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-alias docker-reset="docker rm -f $(docker ps -a -q) && docker rmi $(docker images -q)"
 
 # custom boot scripts
 neofetch
 terminal-notifier -title 'iTerm2' -message 'Welcome Danh Nguyen'
 
-if [ -f "$BASE16_SHELL" ] && [ -n "$ITERM_SESSION_ID" ] ; then
-    source $BASE16_SHELL
-fi
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"

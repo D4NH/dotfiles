@@ -1,14 +1,12 @@
 # D4NH's dotfiles
 
-* OS: `macOS Catalina 10.15.1`
+* OS: `macOS Catalina 10.15`
 * Window Manager: `yabai`
 * Terminal: `iTerm`
-* Terminal Font: `Source Code Pro for Powerline`
 * Terminal color scheme: `base16-shell`
-* Text Editor: `Visual Studio Code + VIM`
-* Editor Font: `Source Code Pro for Powerline`
-* File Browser: `Ranger`
-* Web Browser: `Google Chrome`
+* Text Editor: `Visual Studio Code`
+* Font: `MesloLGSForPowerline-Regular`
+* Web Browser: `Mozilla Firefox`
 
 ## Links
 

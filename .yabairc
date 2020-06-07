@@ -20,6 +20,7 @@ yabai -m config --space 1 right_padding         150
 yabai -m config status_bar                      off
 yabai -m config window_shadow                   on
 yabai -m config window_placement                second_child
+yabai -m config window_topmost                  on
 
 # set mouse interactions
 #yabai -m config mouse_modifier                  fn
@@ -41,7 +42,6 @@ yabai -m config window_border                   off
 #yabai -m config insert_window_border_color      0xffd75f5f
 
 # window opacity settings
-yabai -m config window_opacity                  off
 #yabai -m config window_opacity_duration         0.0
 #yabai -m config active_window_opacity           1.0
 #yabai -m config normal_window_opacity           0.90
@@ -56,7 +56,7 @@ yabai -m rule --add app="^The Archive Browser$" manage=off
 yabai -m rule --add app="^mpv$" manage=off
 yabai -m rule --add app="^Simulator" manage=off
 
-# refresh my Übersicht bar when the space changes
+# refresh Übersicht bar when the space changes
 #yabai -m signal --add event=space_changed action="osascript -e 'display notification \"active space changed.\" with title \"yabai\" subtitle \"signal\"'"
 yabai -m signal --add event=window_focused action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"bar-widget-focused-window-coffee\"'"
 yabai -m signal --add event=window_title_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"bar-widget-focused-window-coffee\"'"

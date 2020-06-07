@@ -1,0 +1,18 @@
+#TabsToolbar {
+    visibility: collapse !important;
+}
+
+#urlbar:not(.megabar):not([focused="true"]):-moz-lwtheme,
+#urlbar.megabar:not([focused="true"]):-moz-lwtheme > #url-background,
+#navigation-toolbox #searchbar:not(:focus-within):-moz-lwtheme {
+    border: none !important;
+    margin-top: 1px !important;
+}
+
+#navigator-toolbox {
+    border-color: #444 !important;
+}
+
+#urlbar[breakout][breakout-extend] #urlbar-background {
+    border: none !important;
+}
