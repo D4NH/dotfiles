@@ -10,8 +10,8 @@
 
 ## Screenshots
 ![Clean](./screenshots/clean.png)
-![Firefox](./screenshots/firefox.jpg)
-![iTerm](./screenshots/iterm.jpg)
+![Firefox](./screenshots/firefox.png)
+![iTerm](./screenshots/iterm.png)
 
 ## Links
 
