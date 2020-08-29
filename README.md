@@ -8,6 +8,11 @@
 * Font: `MesloLGSForPowerline-Regular`
 * Web Browser: `Mozilla Firefox`
 
+## Screenshots
+![Clean](./screenshots/clean.png)
+![Firefox](./screenshots/firefox.jpg)
+![iTerm](./screenshots/iterm.jpg)
+
 ## Links
 
 * [yabai](https://github.com/koekeishiya/yabai)
