@@ -17,9 +17,6 @@ ralt - e : yabai -m space --balance
 rcmd + ralt - g : yabai -m window --toggle float;\
           yabai -m window --grid 4:4:1:1:2:2
 
-# float window (picture-in-picture)
-rcmd + ralt - f : yabai -m window --toggle sticky
-
 # make floating window fill screen
 rcmd + ralt - up : yabai -m window --grid 1:1:0:0:1:1
 
