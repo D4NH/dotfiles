@@ -4,7 +4,7 @@
 yabai -m config layout                          float
 
 # set all padding and gaps
-yabai -m config top_padding                     45
+yabai -m config top_padding                     38
 yabai -m config bottom_padding                  10
 yabai -m config left_padding                    10
 yabai -m config right_padding                   10
@@ -38,23 +38,41 @@ yabai -m config active_window_border_color      0xff8ec13e
 yabai -m config normal_window_border_color      0xff505050
 
 # window opacity settings
+#yabai -m config window_opacity                  on
 #yabai -m config window_opacity_duration         0.0
 #yabai -m config active_window_opacity           1.0
-#yabai -m config normal_window_opacity           0.90
+#yabai -m config normal_window_opacity           0.95
 
 # custom window settings
 yabai -m rule --add title="Preferences$" manage=off layer=above
+yabai -m rule --add app="^System Preferences$" manage=off layer=above
 yabai -m rule --add app="^BetterTouchTool$" manage=off
-yabai -m rule --add app="^Firefox$" title="^Opening .*$" manage=off
-yabai -m rule --add app="^Photoshop$" manage=off
+yabai -m rule --add title="^Opening .*$" manage=off
+yabai -m rule --add title="^$" manage=off
 yabai -m rule --add app="^Steam$" manage=off
-yabai -m rule --add app="^The Archive Browser$" manage=off
-yabai -m rule --add app="^mpv$" manage=off
 yabai -m rule --add app="^Simulator" manage=off
+yabai -m rule --add app="^Maccy$" manage=off
 
 # refresh Übersicht bar when the space changes
 #yabai -m signal --add event=space_changed action="osascript -e 'display notification \"active space changed.\" with title \"yabai\" subtitle \"signal\"'"
-yabai -m signal --add event=window_focused action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"bar-widget-focused-window-coffee\"'"
-yabai -m signal --add event=window_title_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"bar-widget-focused-window-coffee\"'"
+
+# Refresh spaces widget on space change
+yabai -m signal --add event=space_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
+# Refresh spaces widget on display focus change
+yabai -m signal --add event=display_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
+# Refresh process widget on space change
+yabai -m signal --add event=space_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
+
+# Refresh process widget on when focused application changes
+yabai -m signal --add event=application_front_switched action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
+# Refresh spaces widget on when focused application changes
+yabai -m signal --add event=application_front_switched action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
+
+# Refresh process widget on when an application window is closed
+yabai -m signal --add event=window_destroyed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
+# Refresh spaces widget on when an application window is closed
+yabai -m signal --add event=window_destroyed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
+
+
 
 echo "yabai configuration loaded.."
