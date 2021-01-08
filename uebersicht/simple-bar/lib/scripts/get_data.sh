@@ -20,6 +20,28 @@ WIFI_SSID=$(networksetup -getairportnetwork en0 | cut -c 24-)
 VOLUME=$(osascript -e 'set ovol to output volume of (get volume settings)')
 MUTED=$(osascript -e 'set ovol to output muted of (get volume settings)')
 
+DISPLAYS=$(/usr/local/bin/yabai -m query --displays)
+SPACES=$(/usr/local/bin/yabai -m query --spaces --space | jq '.type')
+WINDOWS=$(/usr/local/bin/yabai -m query --windows)
+SIP=$(csrutil status)
+
+if [ -z "$DISPLAYS" ]
+then
+      DISPLAYS="[]"
+fi
+
+if [ -z "$SPACES" ]
+then
+      SPACES="[]"
+fi
+
+if [ -z "$WINDOWS" ]
+then
+      WINDOWS="[]"
+fi
+
+DATA="{ \"displays\": $DISPLAYS, \"spaces\": $SPACES, \"windows\": $WINDOWS }"
+
 echo $(cat <<-EOF
   {
     "time": "$TIME",
@@ -35,7 +57,8 @@ echo $(cat <<-EOF
     "sound": {
       "volume": "$VOLUME",
       "muted": "$MUTED"
-    }
+    },
+    "spaces": $DATA
   }
 EOF
 )

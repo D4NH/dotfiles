@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DISPLAYS=$(/usr/local/bin/yabai -m query --displays)
-SPACES=$(/usr/local/bin/yabai -m query --spaces)
+SPACES=$(/usr/local/bin/yabai -m query --spaces --space | jq '.type')
 WINDOWS=$(/usr/local/bin/yabai -m query --windows)
 SIP=$(csrutil status)
 

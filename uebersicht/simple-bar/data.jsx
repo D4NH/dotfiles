@@ -1,7 +1,8 @@
 import Time from './lib/components/Time.jsx'
 import DateDisplay from './lib/components/Date.jsx'
 import Battery from './lib/components/Battery.jsx'
-// import Sound from './lib/components/Sound.jsx'
+import Sound from './lib/components/Sound.jsx'
+import Query from './lib/components/Query.jsx'
 import Wifi from './lib/components/Wifi.jsx'
 
 import { parseJson } from './lib/utils.js'
@@ -36,15 +37,18 @@ const className = /* css */ `
   ${SoundStyles}
 `
 
-const command = 'bash simple-bar/lib/scripts/get_data.sh'
+const command = 'bash simple-bar/lib/scripts/get_data.sh;'
 
 const render = ({ output, error }) => {
   if (!output || error) return <div className="simple-bar__error">Something went wrong...</div>
   const data = parseJson(output)
+  console.log('data', data);
   if (!data) return <div className="simple-bar__error">JSON error...</div>
-  const { time, battery, wifi, sound } = data
+  const { time, battery, wifi, sound, spaces } = data
   return (
     <div className="simple-bar__data">
+      <Query output={spaces} />
+      <Sound output={sound} />
       <Battery output={battery} />
       <Wifi output={wifi} />
       <DateDisplay />

@@ -31,7 +31,11 @@ const render = (state) => {
   if (!data) return <div className="simple-bar__error">JSON error...</div>
   return (
     <div className="simple-bar__spaces">
-      <Spaces output={data.spaces} SIP={data.SIP} displayId={1} />
+      <div className="spaces">
+          <div className="space__inner">
+            Danh Nguyen
+          </div>
+      </div>
     </div>
   )
 }
