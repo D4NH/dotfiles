@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
 # set default layout
 yabai -m config layout                          float
 
@@ -20,8 +23,9 @@ yabai -m config --space 5 layout                bsp
 
 # global settings
 yabai -m config status_bar                      off
-yabai -m config window_shadow                   off
+yabai -m config window_shadow                   on
 yabai -m config window_placement                second_child
+yabai -m config window_topmost                  off
 
 # set mouse interactions
 yabai -m config mouse_modifier                  fn
@@ -32,47 +36,36 @@ yabai -m config mouse_action1                   move
 #yabai -m config mouse_follows_focus             off
 
 # set window border
-yabai -m config window_border                   on
+yabai -m config window_border                   off
 yabai -m config window_border_width             4
 yabai -m config active_window_border_color      0xff8ec13e
 yabai -m config normal_window_border_color      0xff505050
 
 # window opacity settings
-#yabai -m config window_opacity                  on
-#yabai -m config window_opacity_duration         0.0
-#yabai -m config active_window_opacity           1.0
-#yabai -m config normal_window_opacity           0.95
+yabai -m config window_opacity                  off
+yabai -m config window_opacity_duration         0.0
+yabai -m config active_window_opacity           1.0
+yabai -m config normal_window_opacity           0.90
 
 # custom window settings
-yabai -m rule --add title="Preferences$" manage=off layer=above
-yabai -m rule --add app="^System Preferences$" manage=off layer=above
-yabai -m rule --add app="^BetterTouchTool$" manage=off
-yabai -m rule --add title="^Opening .*$" manage=off
-yabai -m rule --add title="^$" manage=off
-yabai -m rule --add app="^Steam$" manage=off
-yabai -m rule --add app="^Simulator" manage=off
+#yabai -m rule --add title="Preferences$" manage=off layer=above
+yabai -m rule --add app="^(BetterTouchTool|Calculator|Microsoft Teams|Steam|Simulator|System Preferences|System Information)$" manage=off
+#yabai -m rule --add title="^Opening .*$" manage=off
+#yabai -m rule --add title="^$" manage=off
+#yabai -m rule --add title="(Copy|Bin|About This Mac|Info)" manage=off
 yabai -m rule --add app="^Maccy$" manage=off
 
 # refresh Übersicht bar when the space changes
 #yabai -m signal --add event=space_changed action="osascript -e 'display notification \"active space changed.\" with title \"yabai\" subtitle \"signal\"'"
 
-# Refresh spaces widget on space change
-yabai -m signal --add event=space_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
-# Refresh spaces widget on display focus change
-yabai -m signal --add event=display_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
-# Refresh process widget on space change
+# Refresh widget on change
+yabai -m signal --add event=space_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-data-jsx\"'"
+yabai -m signal --add event=display_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-data-jsx\"'"
 yabai -m signal --add event=space_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
-
-# Refresh process widget on when focused application changes
+yabai -m signal --add event=window_focused action="osascript -e 'tell application id \"tracesOf.ebersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
+yabai -m signal --add event=window_focused action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-data-jsx\"'"
 yabai -m signal --add event=application_front_switched action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
-# Refresh spaces widget on when focused application changes
-yabai -m signal --add event=application_front_switched action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
-
-# Refresh process widget on when an application window is closed
 yabai -m signal --add event=window_destroyed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
-# Refresh spaces widget on when an application window is closed
-yabai -m signal --add event=window_destroyed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
-
-
+yabai -m signal --add event=window_title_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-process-jsx\"'"U
 
 echo "yabai configuration loaded.."

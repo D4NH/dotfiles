@@ -6,19 +6,23 @@ rcmd + ralt - f : yabai -m space --layout float
 rcmd + ralt - m : yabai -m space --layout stack
 
 # rotate tree
-rcmd + ralt - r : yabai -m space --rotate 90
+ralt - r : yabai -m space --rotate 90
 
 # toggle split
-ralt - r : yabai -m window --toggle split
+rshift + ralt - r : yabai -m window --toggle split
 
 # toggle padding
-ralt - p : yabai -m space --toggle padding
+ralt - p : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # equalize size of windows
 ralt - e : yabai -m space --balance
 
 # make floating window fill screen
 rcmd + ralt - up : yabai -m window --grid 1:1:0:0:1:1
+
+# fast focus desktop 
+#shift + ctrl + alt + cmd - left : yabai -m space --focus prev
+#shift + ctrl + alt + cmd - right: yabai -m space --focus next
 
 # make floating window fill left-half of screen
 rcmd + ralt - 0x21 : yabai -m window --grid 1:2:0:0:1:1
@@ -27,18 +31,21 @@ rcmd + ralt - 0x21 : yabai -m window --grid 1:2:0:0:1:1
 rcmd + ralt - 0x1E : yabai -m window --grid 1:2:1:0:1:1
 
 # make floating window center screen
-rcmd + ralt - c : yabai -m window --grid 5:5:1:1:3:3
+rcmd + ralt - space : yabai -m window --grid 5:5:1:1:3:3
 
 # focus stack
 cmd + shift - 0x0A : yabai -m window --focus stack.prev
 cmd - 0x0A : yabai -m window --focus stack.next
 
 # move window
-rcmd + ralt - left : yabai -m window --swap west
-rcmd + ralt - down : yabai -m window --swap south
-rcmd + ralt - up : yabai -m window --swap north
-rcmd + ralt - right : yabai -m window --swap east
+rshift + ralt - left : yabai -m window --swap west
+rshift + ralt - down : yabai -m window --swap south
+rshift + ralt - up : yabai -m window --swap north
+rshift + ralt - right : yabai -m window --swap east
 
 # send window to monitor
 rcmd + ralt - 1 : yabai -m window --display 1; yabai -m display --focus 1; yabai -m window --grid 1:1:0:0:1:1
 rcmd + ralt - 2 : yabai -m window --display 2; yabai -m display --focus 2; yabai -m window --grid 1:1:0:0:1:1
+
+# open new iTerm
+shift + ctrl + alt + cmd - t : osascript -e 'tell app \"iTerm2\"' \ -e 'create window with default profile' \ -e activate \ -e end
