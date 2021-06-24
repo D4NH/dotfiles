@@ -14,10 +14,10 @@ yabai -m config right_padding                   10
 yabai -m config window_gap                      10
 
 # override layout
-yabai -m config --space 1 top_padding           200
-yabai -m config --space 1 bottom_padding        200
-yabai -m config --space 1 left_padding          150
-yabai -m config --space 1 right_padding         150
+#yabai -m config --space 1 top_padding           200
+#yabai -m config --space 1 bottom_padding        200
+#yabai -m config --space 1 left_padding          150
+#yabai -m config --space 1 right_padding         150
 yabai -m config --space 4 layout                bsp
 yabai -m config --space 5 layout                bsp
 
@@ -49,11 +49,11 @@ yabai -m config normal_window_opacity           0.90
 
 # custom window settings
 #yabai -m rule --add title="Preferences$" manage=off layer=above
-yabai -m rule --add app="^(BetterTouchTool|Calculator|Microsoft Teams|Steam|Simulator|System Preferences|System Information)$" manage=off
+yabai -m rule --add app="^(BetterTouchTool|Calculator|Maccy|Microsoft Teams|Steam|Simulator|System Preferences|System Information)$" manage=off
+yabai -m rule --add app="^Firefox$" title="^Opening .*$" manage=off
 #yabai -m rule --add title="^Opening .*$" manage=off
 #yabai -m rule --add title="^$" manage=off
 #yabai -m rule --add title="(Copy|Bin|About This Mac|Info)" manage=off
-yabai -m rule --add app="^Maccy$" manage=off
 
 # refresh Übersicht bar when the space changes
 #yabai -m signal --add event=space_changed action="osascript -e 'display notification \"active space changed.\" with title \"yabai\" subtitle \"signal\"'"

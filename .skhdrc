@@ -20,22 +20,19 @@ ralt - e : yabai -m space --balance
 # make floating window fill screen
 rcmd + ralt - up : yabai -m window --grid 1:1:0:0:1:1
 
-# fast focus desktop 
+# make tiled window fill screen
+rcmd - return : yabai -m window --toggle zoom-fullscreen
+
+# fast focus desktop
 #shift + ctrl + alt + cmd - left : yabai -m space --focus prev
 #shift + ctrl + alt + cmd - right: yabai -m space --focus next
 
-# make floating window fill left-half of screen
-rcmd + ralt - 0x21 : yabai -m window --grid 1:2:0:0:1:1
-
-# make floating window fill right-half of screen
-rcmd + ralt - 0x1E : yabai -m window --grid 1:2:1:0:1:1
-
 # make floating window center screen
-rcmd + ralt - space : yabai -m window --grid 5:5:1:1:3:3
+rcmd + ralt - space : [[ $(yabai -m query --spaces --space | jq '.index' ) == 1 ]] && yabai -m window --grid 5:7:1:1:5:3 || yabai -m window --grid 6:4:1:1:2:4
 
 # focus stack
-cmd + shift - 0x0A : yabai -m window --focus stack.prev
-cmd - 0x0A : yabai -m window --focus stack.next
+#shift + ctrl + alt + cmd - left : yabai -m window --focus stack.prev
+#shift + ctrl + alt + cmd - right : yabai -m window --focus stack.next
 
 # move window
 rshift + ralt - left : yabai -m window --swap west
@@ -48,4 +45,4 @@ rcmd + ralt - 1 : yabai -m window --display 1; yabai -m display --focus 1; yabai
 rcmd + ralt - 2 : yabai -m window --display 2; yabai -m display --focus 2; yabai -m window --grid 1:1:0:0:1:1
 
 # open new iTerm
-shift + ctrl + alt + cmd - t : osascript -e 'tell app \"iTerm2\"' \ -e 'create window with default profile' \ -e activate \ -e end
+ctrl + alt + shift + cmd - t : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
