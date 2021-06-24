@@ -1,6 +1,6 @@
 # D4NH's dotfiles
 
-* OS: `macOS Catalina 10.15`
+* OS: `macOS Big Sur 11.4`
 * Window Manager: `yabai`
 * Terminal: `iTerm`
 * Terminal color scheme: `base16-shell`
