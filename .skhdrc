@@ -28,7 +28,8 @@ rcmd - return : yabai -m window --toggle zoom-fullscreen
 #shift + ctrl + alt + cmd - right: yabai -m space --focus next
 
 # make floating window center screen
-rcmd + ralt - space : [[ $(yabai -m query --spaces --space | jq '.index' ) == 1 ]] && yabai -m window --grid 5:7:1:1:5:3 || yabai -m window --grid 6:4:1:1:2:4
+#<rows>:<cols>:<start-x>:<start-y>:<width>:<height>
+rcmd + ralt - space : [[ $(yabai -m query --displays --display | jq '.frame.w' ) == 1920 ]] && yabai -m window --grid 5:7:1:1:5:3 || yabai -m window --grid 6:4:1:1:2:4
 
 # focus stack
 #shift + ctrl + alt + cmd - left : yabai -m window --focus stack.prev
