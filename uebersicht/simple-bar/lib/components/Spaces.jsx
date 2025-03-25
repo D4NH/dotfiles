@@ -1,6 +1,3 @@
-import Space from './Space.jsx'
-import { Add } from './Icons.jsx'
-
 import { clickEffect } from '../utils.js'
 import { createSpace } from '../yabai.js'
 
@@ -11,8 +8,6 @@ const Spaces = ({ output, SIP, displayId }) => {
   let focusedSpace
 
   if (!output) return <div className="spaces-display spaces-display--empty" />
-
-  const SIPDisabled = SIP === 'System Integrity Protection status: disabled.'
 
   return displays.map((display, i) => {
     if (display.index !== displayId) return null

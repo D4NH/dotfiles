@@ -42,7 +42,7 @@ const render = ({ output }) => {
   return (
     <div className={classes} onClick={clicked}>
       <Icon className="wifi__icon" />
-      {name}
+      <span>{name}</span>
     </div>
   )
 }

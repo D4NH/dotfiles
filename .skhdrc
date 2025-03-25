@@ -17,9 +17,6 @@ ralt - p : yabai -m space --toggle padding; yabai -m space --toggle gap
 # equalize size of windows
 ralt - e : yabai -m space --balance
 
-# make floating window fill screen
-rcmd + ralt - up : yabai -m window --grid 1:1:0:0:1:1
-
 # make tiled window fill screen
 rcmd - return : yabai -m window --toggle zoom-fullscreen
 
@@ -27,9 +24,16 @@ rcmd - return : yabai -m window --toggle zoom-fullscreen
 #shift + ctrl + alt + cmd - left : yabai -m space --focus prev
 #shift + ctrl + alt + cmd - right: yabai -m space --focus next
 
+# make floating window fill screen
+rcmd + ralt - up : yabai -m window --grid 1:1:0:0:1:1
+rcmd + ralt - left : yabai -m window --grid 1:4:0:0:2:1
+rcmd + ralt - right : yabai -m window --grid 1:4:2:0:2:1
+#rcmd + ralt - down : yabai -m window --grid 6:8:2:1:4:4
+
 # make floating window center screen
 #<rows>:<cols>:<start-x>:<start-y>:<width>:<height>
-rcmd + ralt - space : [[ $(yabai -m query --displays --display | jq '.frame.w' ) == 1920 ]] && yabai -m window --grid 5:7:1:1:5:3 || yabai -m window --grid 6:4:1:1:2:4
+rcmd + ralt - space : [[ $(yabai -m query --displays --display | jq '.frame.w') == 3440.0000 ]] && yabai -m window --grid 12:6:1:1:4:10 || yabai -m window --grid 6:7:1:1:5:4
+#rcmd + ralt - space : yabai -m window --grid 6:7:1:1:5:4
 
 # focus stack
 #shift + ctrl + alt + cmd - left : yabai -m window --focus stack.prev
@@ -46,4 +50,4 @@ rcmd + ralt - 1 : yabai -m window --display 1; yabai -m display --focus 1; yabai
 rcmd + ralt - 2 : yabai -m window --display 2; yabai -m display --focus 2; yabai -m window --grid 1:1:0:0:1:1
 
 # open new iTerm
-ctrl + alt + shift + cmd - t : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
+#ctrl + alt + shift + cmd - t : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm

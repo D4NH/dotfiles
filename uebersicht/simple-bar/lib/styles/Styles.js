@@ -36,6 +36,9 @@ export const SpacesStyles = /* css */ `
   transition: color 320ms ${Theme.easing}, background-color 320ms ${Theme.easing}, transform 320ms ${Theme.easing};
   z-index: 0;
 }
+  .space__inner span {
+  margin-top: 2px;
+  }
 @media (prefers-color-scheme: dark) {
   .space__inner {
     color: ${Theme.minor};
@@ -225,6 +228,9 @@ export const BatteryStyles = /* css */ `
     background-color: white;
   }
 }
+.battery span {
+  margin-top: 2px;
+}
 .battery__charging-icon {
   width: 10px;
   height: 10px;
@@ -280,6 +286,9 @@ export const SoundStyles = /* css */ `
     border-radius: 2px;
     box-shadow: ${Theme.lightShadow};
   }
+  .sound span {
+    margin-top: 2px;
+  }
   @media (prefers-color-scheme: dark) {
     .sound {
       background-color: white;
@@ -304,6 +313,9 @@ export const WifiStyles = /* css */ `
     cursor: pointer;
     user-select: none;
     transition: opacity 160ms ${Theme.easing}, transform 160ms ${Theme.easing};
+  }
+  .wifi span {
+    margin-top: 2px;
   }
   .wifi:hover {
     opacity: 0.7;
@@ -333,6 +345,9 @@ export const DateStyles = /* css */ `
   border-radius: 2px;
   box-shadow: ${Theme.lightShadow};
 }
+.date span {
+  margin-top: 2px;
+}
 @media (prefers-color-scheme: dark) {
   .date {
     background-color: white;
@@ -355,6 +370,9 @@ export const TimeStyles = /* css */ `
   border-radius: 2px;
   box-shadow: ${Theme.lightShadow};
   color: ${Theme.minor}
+}
+  .time span {
+  margin-top: 2px;
 }
 @media (prefers-color-scheme: dark) {
   .time {

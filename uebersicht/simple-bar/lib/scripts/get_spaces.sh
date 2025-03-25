@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-DISPLAYS=$(/usr/local/bin/yabai -m query --displays)
-SPACES=$(/usr/local/bin/yabai -m query --spaces --space | jq '.type')
-WINDOWS=$(/usr/local/bin/yabai -m query --windows)
+DISPLAYS=$(/opt/homebrew/bin/yabai -m query --displays)
+SPACES=$(/opt/homebrew/bin/yabai -m query --spaces --space | jq '.type')
+WINDOWS=$(/opt/homebrew/bin/yabai -m query --windows)
 SIP=$(csrutil status)
 
 if [ -z "$DISPLAYS" ]

@@ -1,18 +1,14 @@
-import Spaces from './lib/components/Spaces.jsx'
 import { SpacesStyles } from './lib/styles/Styles.js'
-
-import { parseJson } from './lib/utils.js'
-
 import { Theme } from './lib/styles/Theme.js'
 
-const refreshFrequency = false
+export const refreshFrequency = false
 
-const className = /* css */ `
+export const className = /* css */ `
   .simple-bar__error,
   .simple-bar__spaces {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 9px;
+    left: 5px;
     padding: 4px 5px;
     color: white;
     font-size: 11px;
@@ -22,22 +18,14 @@ const className = /* css */ `
   ${SpacesStyles}
 `
 
-const command = 'bash simple-bar/lib/scripts/get_spaces.sh'
-
-const render = (state) => {
-  const { output, error } = state
-  if (!output || error) return <div className="simple-bar__error">Something went wrong...</div>
-  const data = parseJson(output)
-  if (!data) return <div className="simple-bar__error">JSON error...</div>
+export const render = () => {
   return (
     <div className="simple-bar__spaces">
       <div className="spaces">
-          <div className="space__inner">
-            Danh Nguyen
-          </div>
+        <div className="space__inner">
+          <span>Danh Nguyen</span>
+        </div>
       </div>
     </div>
   )
 }
-
-export { command, refreshFrequency, className, render }

@@ -15,14 +15,14 @@ elif [ "$BATTERY_STATUS" == "AC" ]; then
 fi
 
 WIFI_STATUS=$(ifconfig en0 | grep status | cut -c 10-)
-WIFI_SSID=$(networksetup -getairportnetwork en0 | cut -c 24-)
+WIFI_SSID=$(system_profiler SPAirPortDataType | awk '/Current Network/ {getline;$1=$1;print $0 | "tr -d ':'";exit}')
 
 VOLUME=$(osascript -e 'set ovol to output volume of (get volume settings)')
 MUTED=$(osascript -e 'set ovol to output muted of (get volume settings)')
 
-DISPLAYS=$(/usr/local/bin/yabai -m query --displays)
-SPACES=$(/usr/local/bin/yabai -m query --spaces --space | jq '.type')
-WINDOWS=$(/usr/local/bin/yabai -m query --windows)
+DISPLAYS=$(/opt/homebrew/bin/yabai -m query --displays)
+SPACES=$(/opt/homebrew/bin/yabai -m query --spaces --space | jq '.type')
+WINDOWS=$(/opt/homebrew/bin/yabai -m query --windows)
 SIP=$(csrutil status)
 
 if [ -z "$DISPLAYS" ]

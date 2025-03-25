@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PROCESS="$(/usr/local/bin/yabai -m query --windows --space)"
+PROCESS="$(/opt/homebrew/bin/yabai -m query --windows --space)"
 
 if [ -z "$PROCESS" ]
 then
