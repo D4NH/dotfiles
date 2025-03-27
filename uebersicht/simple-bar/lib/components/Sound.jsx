@@ -11,7 +11,7 @@ const Sound = ({ output }) => {
   return (
     <div className="sound">
       <Icon className="sound__icon" />
-      <span>{volume}%</span>
+      {volume}%
     </div>
   )
 }

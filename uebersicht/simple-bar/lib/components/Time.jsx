@@ -5,7 +5,7 @@ const Time = ({ output }) => {
   return (
     <div className="time">
       <Clock className="time__icon" />
-      <span>{output}</span>
+      {output}
     </div>
   )
 }

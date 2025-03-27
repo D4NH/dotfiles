@@ -6,7 +6,7 @@ const DateDisplay = () => {
   return (
     <div className="date">
       <Calendar className="date__icon" />
-      <span>{now}</span>
+      {now}
     </div>
   )
 }

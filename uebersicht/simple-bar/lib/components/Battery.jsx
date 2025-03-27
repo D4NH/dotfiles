@@ -26,7 +26,7 @@ const Battery = ({ output }) => {
       <div className="battery__icon">
         <div className="battery__icon-filler" style={{ transform: transformValue }} />
       </div>
-      <span>{percentage}%</span>
+      <div className="battery__text">{percentage}%</div>
     </div>
   )
 }

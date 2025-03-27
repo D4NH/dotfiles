@@ -14,7 +14,7 @@ export const className = `
   .simple-bar__error,
   .simple-bar__data {
     position: fixed;
-    top: 9px;
+    top: 8px;
     right: 5px;
     display: flex;
     align-items: center;
