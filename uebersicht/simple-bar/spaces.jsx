@@ -1,7 +1,7 @@
-import { SpacesStyles } from './lib/styles/Styles.js'
-import { Theme } from './lib/styles/Theme.js'
+import { SpacesStyles } from './lib/styles/Styles.js';
+import { Theme } from './lib/styles/Theme.js';
 
-export const refreshFrequency = false
+export const refreshFrequency = false;
 
 export const className = /* css */ `
   .simple-bar__error,
@@ -16,14 +16,14 @@ export const className = /* css */ `
     z-index: 1;
   }
   ${SpacesStyles}
-`
+`;
 
 export const render = () => {
-  return (
-    <div className="simple-bar__spaces">
-      <div className="spaces">
-        <div className="space__inner">Danh Nguyen</div>
-      </div>
-    </div>
-  )
-}
+    return (
+        <div className="simple-bar__spaces">
+            <div className="spaces">
+                <div className="space__inner">Danh Nguyen</div>
+            </div>
+        </div>
+    );
+};

@@ -1,19 +1,27 @@
-import { VolumeHigh, VolumeLow, NoVolume, VolumeMuted } from './Icons.jsx'
+import { VolumeHigh, VolumeLow, NoVolume, VolumeMuted } from './Icons.jsx';
 
 const Sound = ({ output }) => {
-  if (!output) return
-  const { volume, muted } = output
-  const isMuted = muted === 'true'
+    if (!output) return;
+    const { volume, muted } = output;
+    const isMuted = muted === 'true';
 
-  const Icon =
-    isMuted && volume !== '0' ? VolumeMuted : volume === '0' ? NoVolume : volume < 50 ? VolumeLow : VolumeHigh
+    const volumeText = volume === 'missing value' ? '100' : volume;
 
-  return (
-    <div className="sound">
-      <Icon className="sound__icon" />
-      {volume}%
-    </div>
-  )
-}
+    const Icon =
+        isMuted && volume !== '0'
+            ? VolumeMuted
+            : volume === '0'
+            ? NoVolume
+            : volume < 50
+            ? VolumeLow
+            : VolumeHigh;
 
-export default Sound
+    return (
+        <div className="sound">
+            <Icon className="sound__icon" />
+            {volumeText}%
+        </div>
+    );
+};
+
+export default Sound;

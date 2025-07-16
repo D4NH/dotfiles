@@ -1,4 +1,4 @@
-import { Theme } from './Theme.js'
+import { Theme } from './Theme.js';
 
 export const SpacesStyles = /* css */ `
 .spaces {
@@ -13,7 +13,7 @@ export const SpacesStyles = /* css */ `
   cursor: pointer;
   user-select: none;
 }
-`
+`;
 
 export const BatteryStyles = /* css */ `
 .battery {
@@ -27,7 +27,7 @@ export const BatteryStyles = /* css */ `
 .battery__charging-icon {
   width: 10px;
   height: 10px;
-  margin: 2px 2px 0 0;
+  margin: 0 2px 0 0;
   fill: white;
 }
 .battery__icon {
@@ -61,7 +61,7 @@ export const BatteryStyles = /* css */ `
 .battery--low .battery__icon-filler {
   background-color: ${Theme.red};
 }
-`
+`;
 
 export const SoundStyles = /* css */ `
 .sound {
@@ -73,13 +73,13 @@ export const SoundStyles = /* css */ `
   border-radius: 2px;
 }
 .sound__icon {
-  margin-top: -2px;
   width: 14px;
   height: 14px;
+  margin-top: -2px;
   margin-right: 4px;
   fill: white;
 }
-`
+`;
 
 export const WifiStyles = /* css */ `
 .wifi {
@@ -105,7 +105,7 @@ export const WifiStyles = /* css */ `
   margin-right: 7px;
   fill: white;
 }
-`
+`;
 
 export const DateStyles = /* css */ `
 .date {
@@ -122,7 +122,7 @@ export const DateStyles = /* css */ `
   margin-right: 7px;
   fill: white;
 }
-`
+`;
 
 export const TimeStyles = /* css */ `
 .time {
@@ -141,4 +141,4 @@ export const TimeStyles = /* css */ `
   margin-right: 5px;
   fill: ${Theme.minor};
 }
-`
+`;
