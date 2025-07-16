@@ -17,4 +17,7 @@ yabai -m config window_gap                      10
 # yabai -m config --space 4 layout              bsp
 # yabai -m config --space 5 layout              bsp
 
+# custom window settings
+yabai -m rule --add app="^(BetterTouchTool|Calculator|Maccy|Microsoft Teams|OBS|Steam|Simulator|System Preferences|System Information)$" manage=off
+
 echo "yabai configuration loaded.."
