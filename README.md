@@ -1,7 +1,7 @@
 # D4NH's dotfiles
 
 - Device: `Macbook Pro M4 Pro, 24GB, 512GB`
-- OS: `macOS Sequoia 15.3.2`
+- OS: `macOS Sequoia 15.5`
 - Window Manager: `yabai`
 - Terminal: `iTerm`
 - Terminal color scheme: `base16-shell`
